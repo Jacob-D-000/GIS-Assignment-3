@@ -1,0 +1,61 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "Store Name": "Bookmark"
+        },
+        "geometry": {
+          "coordinates": [
+            -63.57937215878172,
+            44.64230048740856
+          ],
+          "type": "Point"
+        },
+        "id": 0
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Store Name": "Venus Envy"
+        },
+        "geometry": {
+          "coordinates": [
+            -63.57419527652215,
+            44.647748048175515
+          ],
+          "type": "Point"
+        },
+        "id": 1
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Store Name": "Strange Adventure"
+        },
+        "geometry": {
+          "coordinates": [
+            -63.57161352194139,
+            44.647765155303915
+          ],
+          "type": "Point"
+        },
+        "id": 2
+      },
+        {
+        "type": "Feature",
+        "properties": {
+            "Store Name": "Coles"
+        },
+        "geometry": {
+            "coordinates": [
+            -63.575524646552466,
+            44.64974497165596
+            ],
+            "type": "Point"
+        },
+        "id": 7
+        }
+    ]
+}

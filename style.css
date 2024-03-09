@@ -1,12 +1,12 @@
 @import "node_modules/ol/ol.css";
 
 html, body {
-  margin: 0;
-  height: 100%;
+	margin: 0;
+	height: 100%;
 }
 #map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
+	position: relative; 		
+	padding: 50px;
+	width: 90%;
+	height: 60%;
 }

@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using OpenLayers with Vite</title>
-  </head>
-  <body>
-    <div id="map"></div>
-    <div id="mouse-position"></div>
-    <script type="module" src="./main.js"></script>
-  </body>
+	<head>
+	<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Using OpenLayers with Vite</title>
+	</head>
+	<body>
+		<header>
+			<h1>Books Stores and Great Places to Read in Halifax, Nova Scotia</h1>
+		</header>
+		<div id="map"></div>
+		<div id="mouse-position"></div>
+		<div id="basemapChange">
+			<Label>Map 1:</Label>
+			<input id="map1" type="radio" name="mapChange" class="radiobtn">
+			<Label>Map 2:</Label>
+			<input id="map2" type="radio" name="mapChange" class="radiobtn">
+		</div>
+		<div id="layerChange">
+			<Label>Book Stores:</Label>
+			<input id="pointsLayer" type="checkbox" class="checkbtn">
+			<Label>Places to Read: </Label>
+			<input id="polyLayer" type="checkbox" class="checkbtn">
+		</div>
+		<script type="module" src="./main.js"></script>
+	</body>
 </html>

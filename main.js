@@ -14,23 +14,31 @@ import {Vector as VectorSource} from 'ol/source';
 
 import {Style, Icon, Stroke, Fill} from'ol/Style';
 
+function checkCheckBoxes(checkBoxes, radioButtons, storeLyer, placeLyer, map, basemap1, basemap2){
+	map.getLayers().forEach(layer=>{
+		map.removeLayer(layer)
+	})
+	radioButtons.forEach(rb=> {
+		let selectedId
+		if (rb.checked) {
+			selectedId = rb.id
+		}
+		if (selectedId == "map1") {
+			map.setLayers([basemap1])
+		} else if (selectedId == "map2") {
+			map.setLayers([basemap2])
+		}
+	})
 
-const mousePositionControl = new MousePosition({
-	coordinateFormat: createStringXY(10),
-	projection: 'EPSG:4326',
-	// comment the following two lines to have the mouse position
-	// be placed within the map.
-	// className: 'custom-mouse-position',
-	target: document.getElementById('mouse-position'),
-  });
-
-function addgeoLayers(map, storeLyer, placeLyer) {
-	map.addLayer(storeLyer)
-	map.addLayer(placeLyer)
-}
-
-function changeMap(map, basemap1, basemap2) {
-	this.parentNod
+	checkBoxes.forEach(checkBox =>{	
+		if (checkBox.checked) {
+			if (checkBox.id == "pointsLayer") {
+				map.addLayer(storeLyer);
+			} else if (checkBox.id == "polyLayer") {
+				map.addLayer(placeLyer);
+			}
+		}
+	})
 }
 
 function main() {
@@ -45,17 +53,6 @@ function main() {
 			"url": "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
 		})
 	})
-
-	const map = new Map({
-		target: 'map',
-		layers: [
-		  basemap1
-		],
-		view: new View({
-		  center: olProj.fromLonLat([-63.5873587475, 44.6485214089]),
-		  zoom: 13
-		})
-	});
 
 	let storeStyle = new Style({
 		image: new Icon({
@@ -94,7 +91,23 @@ function main() {
 		style: placeStyle
 	});
 
+	const map = new Map({
+		target: 'map',
+		layers: [
+			basemap1
+		],
+		view: new View({
+			center: olProj.fromLonLat([-63.5873587475, 44.6485214089]),
+			zoom: 13
+		})
+	});
+
 	let radioButtons = document.querySelectorAll(".radiobtn")
+
+	let checkBoxes = document.querySelectorAll(".checkbtn");
+	
+	checkCheckBoxes(checkBoxes, radioButtons, storeLyer, placeLyer, map, basemap1, basemap2)
+
 	radioButtons.forEach(radioButton=>{
 		radioButton.addEventListener('click', function(){
 			radioButtons.forEach(rb=> {
@@ -104,40 +117,34 @@ function main() {
 				}
 				if (selectedId == "map1") {
 					map.setLayers([basemap1])
+					checkCheckBoxes(checkBoxes, radioButtons, storeLyer, placeLyer, map, basemap1, basemap2)
 				} else if (selectedId == "map2") {
 					map.setLayers([basemap2])
+					checkCheckBoxes(checkBoxes, radioButtons, storeLyer, placeLyer, map, basemap1, basemap2)
 				}
+
 			})
 		})
 	})
 
-
-	let checkBoxes = document.querySelectorAll(".checkbtn");
-
 	checkBoxes.forEach(checkBox => {
 		checkBox.addEventListener('change', function() {
-			if (checkBox.checked) {
-				if (checkBox.id === "pointsLayer") {
-					map.addLayer(storeLyer);
-				} else if (checkBox.id === "polyLayer") {
-					map.addLayer(placeLyer);
-				}
-			} else {
-				if (checkBox.id === "pointsLayer") {
-					map.removeLayer(storeLyer);
-				} else if (checkBox.id === "polyLayer") {
-					map.removeLayer(placeLyer);
-				}
-			}
-		});
+			checkCheckBoxes(checkBoxes, radioButtons, storeLyer, placeLyer, map, basemap1, basemap2)
+		})
+	})
+
+	const mousePositionControl = new MousePosition({
+		coordinateFormat: createStringXY(10),
+		projection: 'EPSG:4326',
+		// comment the following two lines to have the mouse position
+		// be placed within the map.
+		// className: 'custom-mouse-position',
+		target: document.getElementById('mouse-position'),
 	});
+
+
 	
-
-
-
 	map.addControl(mousePositionControl)
-	
-	// addgeoLayers(map, storeLyer, placeLyer)
 }
 
 

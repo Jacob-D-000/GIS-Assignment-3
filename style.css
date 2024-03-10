@@ -1,12 +1,45 @@
 @import "node_modules/ol/ol.css";
 
-html, body {
-	margin: 0;
+html {
 	height: 100%;
+	background-color: #B5C0D0;
 }
+
+body {
+	margin: auto; 
+	width: 95%;
+	height: 100%;
+	background-color: #CCD3CA;
+}
+
+h1 {
+	width: 90%;
+	padding: 10px;
+}
+
 #map {
 	position: relative; 		
 	padding: 50px;
 	width: 90%;
 	height: 60%;
+	margin: 10 auto; 
+}
+
+#mousePosition{
+	position: relative;
+	margin: 10 auto; 
+	padding-right: 10px;
+}
+
+#basemapChange{
+	width: 90%;
+	position: relative;
+	margin: 10 auto; 
+	padding-left: 10px;
+}
+
+#layerChange {
+	position: relative;
+	margin: 10 auto; 
+	padding-left: 10px;
 }

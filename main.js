@@ -3,7 +3,6 @@ import {Map, View} from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 import * as olProj from 'ol/proj';
-import StadiaMaps from 'ol/source/StadiaMaps.js';
 
 // add mouse control mods
 import MousePosition from 'ol/control/MousePosition.js';
@@ -139,15 +138,10 @@ function main() {
 		// comment the following two lines to have the mouse position
 		// be placed within the map.
 		// className: 'custom-mouse-position',
-		target: document.getElementById('mouse-position'),
+		target: document.getElementById('mousePosition'),
 	});
 
-
-	
 	map.addControl(mousePositionControl)
 }
-
-
-
 
 main()

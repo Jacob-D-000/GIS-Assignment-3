@@ -153,6 +153,10 @@ function main() {
 	});
 
 	map.addControl(mousePositionControl)
+	const mousePositionElement = document.querySelector('.ol-mouse-position');
+	if (mousePositionElement) {
+		mousePositionElement.style.position = 'relative'
+	}
 }
 
 main()

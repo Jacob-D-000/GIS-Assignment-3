@@ -2,19 +2,36 @@
 
 html {
 	height: 100%;
-	background-color: #B5C0D0;
+	background-color: #CCD3CA;
+}
+
+
+header {
+	background-color:  #e99aac;
+	padding-top: 1px;
+	padding-bottom: 1px;
 }
 
 body {
 	margin: auto; 
 	width: 95%;
 	height: 100%;
-	background-color: #CCD3CA;
+	background-color:  #e7d6da;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #6995d8;
+	padding-bottom: 30px;
+	
 }
+
+footer {
+	background-color:  #e99aac;
+	padding: 30px;
+}
+
 
 h1 {
 	width: 90%;
-	padding: 10px;
+	padding-left: 30px;
 }
 
 #map {
@@ -22,24 +39,29 @@ h1 {
 	padding: 50px;
 	width: 90%;
 	height: 60%;
-	margin: 10 auto; 
+	margin: auto; 
 }
 
 #mousePosition{
 	position: relative;
 	margin: 10 auto; 
-	padding-right: 10px;
+	padding-right: 20px;
 }
 
 #basemapChange{
 	width: 90%;
 	position: relative;
 	margin: 10 auto; 
-	padding-left: 10px;
+	padding-left: 20px;
 }
 
 #layerChange {
 	position: relative;
 	margin: 10 auto; 
-	padding-left: 10px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+#nsccLogo {
+	width: 300px;
 }

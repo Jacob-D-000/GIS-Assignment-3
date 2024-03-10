@@ -1,3 +1,10 @@
+<!-- 
+	Project: GIS Assignment 3
+	Author: Jacob Dimoff
+	Date: 10/3/24
+	Filename: index.html
+	Purpose: Basic user interface that loads OpenLayers basemaps, with functionality that determines the basemap to be used and the layers to be drawn.
+-->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -6,20 +13,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Using OpenLayers with Vite</title>
 	</head>
+	<header>
+		<h1>Books Stores and Great Places to Read in Halifax, Nova Scotia</h1>
+	</header>
 	<body>
-		<header>
-			<h1>Books Stores and Great Places to Read in Halifax, Nova Scotia</h1>
-		</header>
 		<div></div>
 		<div id="map"></div>
 		<div id="mousePosition"></div>
 		<div id="basemapChange">
+			<h2>Map Change</h2>
 			<Label>Map 1:</Label>
-			<input id="map1" type="radio" name="mapChange" class="radiobtn">
+			<input id="map1" type="radio" name="mapChange" class="radiobtn" checked="checked">
 			<Label>Map 2:</Label>
 			<input id="map2" type="radio" name="mapChange" class="radiobtn">
 		</div>
 		<div id="layerChange">
+			<h2>Layer Manipulation</h2>
 			<Label>Book Stores:</Label>
 			<input id="pointsLayer" type="checkbox" class="checkbtn">
 			<Label>Places to Read: </Label>
@@ -27,4 +36,7 @@
 		</div>
 		<script type="module" src="./main.js"></script>
 	</body>
+	<footer>
+		<img id="nsccLogo" src="img/COGS_SmallBlack.jpg" alt="COGS NSCC Logo">
+	</footer>
 </html>

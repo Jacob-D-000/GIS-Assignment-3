@@ -1,18 +1,29 @@
+// Project: GIS Assignment 3
+// Author: Jacob Dimoff
+// Date: 10/3/24
+// Filename: templar.cpp
+// Purpose: Allows the user to maipulate the open layer map as well as the abitly to add and remove layers.
+
+// Import developer defined styles
 import './style.css';
+
+// Imports to allow map to render
 import {Map, View} from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 import * as olProj from 'ol/proj';
 
-// add mouse control mods
+// Add mouse control mods
 import MousePosition from 'ol/control/MousePosition.js';
 import {createStringXY} from 'ol/coordinate';
+
+// Allow to add geoJson files as geomertry map layers including layer styles
 import VectorLayer from 'ol/layer/Vector';
 import GeoJSON from 'ol/format/GeoJSON';
 import {Vector as VectorSource} from 'ol/source';
-
 import {Style, Icon, Stroke, Fill} from'ol/Style';
 
+// Function to
 function checkCheckBoxes(checkBoxes, radioButtons, storeLyer, placeLyer, map, basemap1, basemap2){
 	map.getLayers().forEach(layer=>{
 		map.removeLayer(layer)
